@@ -1,0 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+namespace examen
+{
+    class Program
+    {
+        double x = 14.5, sum, rest, mult, div, y, z;
+        Boolean s = true;
+        StreamWriter c;
+
+        public void tipoDeCambio()
+        {
+            Console.WriteLine("el tipo de cambio es:" + x);
+            Console.ReadLine();
+        }
+        public void Dolares()
+        {
+            c = new StreamWriter("C:/Users/luisserrano77/Desktop/resultados.txt");
+            while (s == true)
+            {
+
+                Console.WriteLine("que tipo de cambio deseas hacer? opcion 1: dolares a pesos \n opcion 2 :pesos a dolares ");
+                y = double.Parse(Console.ReadLine());
+
+                if (y == 1)
+                {
+                    Console.WriteLine("este es el menu de las operaciones que puedes hacer 1.-suma");
+                    Console.WriteLine("este es el menu de las operaciones que puedes hacer 2.-resta");
+                    Console.WriteLine("este es el menu de las operaciones que puedes hacer 3.-divicion");
+                    Console.WriteLine("este es el menu de las operaciones que puedes hacer 4.-multiplicacion");
+                    Console.WriteLine("este es el menu de las operaciones que puedes hacer 5.-salir");
+                    y = double.Parse(Console.ReadLine());
+
+                    if (y == 1)
+                    {
+                        Console.WriteLine("cuanto es el monto que deseas cambiar?");
+                        z = double.Parse(Console.ReadLine());
+                        sum = z + z;
+                        Console.WriteLine("tu cambio es " + sum);
+                        Console.ReadLine();
+                        c.WriteLine(sum);
+                    } if (y == 2)
+                    {
+                        Console.WriteLine("cuanto es el monto que deseas cambiar?");
+                        z = double.Parse(Console.ReadLine());
+                        rest = z - z;
+                        Console.WriteLine("tu cambio es " + rest);
+                        Console.ReadLine();
+
+                    } if (y == 3)
+                    {
+                        Console.WriteLine("cuanto es el monto que deseas cambiar?");
+                        z = double.Parse(Console.ReadLine());
+                        div = z / x;
+                        Console.WriteLine("tu cambio es " + div);
+                        Console.ReadLine();
+                    } if (y == 4)
+                    {
+                        Console.WriteLine("cuanto es el monto que deseas cambiar?");
+                        z = double.Parse(Console.ReadLine());
+                        mult = z * x;
+                        Console.WriteLine("tu cambio es " + mult);
+                        Console.ReadLine();
+
+                    } if (y == 5)
+                    {
+                        s = false;
+
+                    }
+                }
+            }
+        }
+        public void archivo()
+        {
+
+
+        }
+        static void Main(string[] args)
+        {
+            Program e = new Program();
+            e.tipoDeCambio();
+            e.Dolares();
+
+        }
+    }
+}
+
